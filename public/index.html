@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Username</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+    <h2>Please enter your name:</h2>
+    <input id="usernameInput" type="text" placeholder="Enter your name">
+    <button onclick="joinChat()">Join Chat</button>
+
+    <script>
+        function joinChat() {
+            const username = document.getElementById('usernameInput').value.trim();
+            if (username !== '') {
+                window.location.href = `/chat.html?username=${encodeURIComponent(username)}`;
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+    </script>
+</body>
+</html>
